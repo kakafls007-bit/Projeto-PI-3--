@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CaisMed | Agenda</title>
+  <meta name="description" content="CaisMed: agende consultas, faça a triagem e acompanhe seu plano de saúde." />
+  <meta name="theme-color" content="#132C77" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="CaisMed" />
+  <script>(function(){try{var t=localStorage.getItem("tema"),f=localStorage.getItem("fonte");document.documentElement.setAttribute("data-tema",t==="escuro"||t==="preto"?"escuro":"claro");document.documentElement.setAttribute("data-fonte",f==="grande"?"grande":"normal")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})()</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-perfil="profissional" data-layout="app">
+  <div class="app" id="app">
+    <main class="app-body" id="main" tabindex="-1">
+      <h1 class="intro-text left">Minha Agenda</h1>
+      <div class="stats" id="resumo-painel" aria-live="polite"></div>
+      <div class="tabs" role="tablist" id="tabs"><button type="button" role="tab" class="tab-btn active" id="tab-lista-hoje" aria-controls="lista-hoje" aria-selected="true">Hoje</button><button type="button" role="tab" class="tab-btn" id="tab-lista-proximas" aria-controls="lista-proximas" aria-selected="false" tabindex="-1">Próximas</button><button type="button" role="tab" class="tab-btn" id="tab-lista-historico" aria-controls="lista-historico" aria-selected="false" tabindex="-1">Histórico</button></div>
+      <div class="tab-panel active" id="lista-hoje" role="tabpanel" aria-labelledby="tab-lista-hoje" tabindex="0"></div><div class="tab-panel" id="lista-proximas" role="tabpanel" aria-labelledby="tab-lista-proximas" tabindex="0"></div><div class="tab-panel" id="lista-historico" role="tabpanel" aria-labelledby="tab-lista-historico" tabindex="0"></div>
+    </main>
+  </div>
+  <noscript><p style="padding:1rem;text-align:center">Ative o JavaScript para usar o CaisMed.</p></noscript>
+  <script type="module" src="js/pages/painel-profissional.js"></script>
+</body>
+</html>

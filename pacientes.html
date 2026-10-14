@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CaisMed | Pacientes</title>
+  <meta name="description" content="CaisMed: agende consultas, faça a triagem e acompanhe seu plano de saúde." />
+  <meta name="theme-color" content="#132C77" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="CaisMed" />
+  <script>(function(){try{var t=localStorage.getItem("tema"),f=localStorage.getItem("fonte");document.documentElement.setAttribute("data-tema",t==="escuro"||t==="preto"?"escuro":"claro");document.documentElement.setAttribute("data-fonte",f==="grande"?"grande":"normal")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})()</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-perfil="profissional,administrador" data-layout="app">
+  <div class="app" id="app">
+    <main class="app-body" id="main" tabindex="-1">
+      <h1 class="intro-text left">Pacientes</h1>
+      <div id="crud"></div>
+    </main>
+  </div>
+  <noscript><p style="padding:1rem;text-align:center">Ative o JavaScript para usar o CaisMed.</p></noscript>
+  <script type="module" src="js/pages/pacientes.js"></script>
+</body>
+</html>

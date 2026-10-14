@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CaisMed | Entrar</title>
+  <meta name="description" content="CaisMed: agende consultas, faça a triagem e acompanhe seu plano de saúde." />
+  <meta name="theme-color" content="#132C77" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="CaisMed" />
+  <script>(function(){try{var t=localStorage.getItem("tema"),f=localStorage.getItem("fonte");document.documentElement.setAttribute("data-tema",t==="escuro"||t==="preto"?"escuro":"claro");document.documentElement.setAttribute("data-fonte",f==="grande"?"grande":"normal")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})()</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-perfil="publico" data-layout="hero">
+  <div class="app" id="app">
+    <main class="app-body" id="main" tabindex="-1">
+      <h1 class="intro-text">Acesse Sua Conta</h1>
+      <form id="login-form">
+        <div class="field">
+          <label for="cpf">CPF</label>
+          <input type="text" id="cpf" name="cpf" inputmode="numeric" maxlength="11" autocomplete="username" placeholder="Somente números" required />
+        </div>
+        <div class="field">
+          <label for="senha">Senha</label>
+          <div class="senha-wrap">
+            <input type="password" id="senha" name="senha" autocomplete="current-password" required />
+            <button type="button" data-mostrar aria-pressed="false" aria-label="Mostrar senha">Mostrar</button>
+          </div>
+          <a class="forgot-link" href="recuperar-senha.html">Esqueceu a Senha?</a>
+        </div>
+        <p class="erro-form" id="erro" role="alert" hidden></p>
+        <p class="aviso" id="demo" hidden></p>
+        <div class="spacer"></div>
+        <div class="bottom-area">
+          <button type="submit" class="btn">Entrar</button>
+          <a class="secondary-link" href="primeiro-acesso.html">Primeiro Acesso</a>
+          <a class="secondary-link" href="login-profissional.html">Sou da Equipe da Clínica</a>
+        </div>
+      </form>
+    </main>
+  </div>
+  <noscript><p style="padding:1rem;text-align:center">Ative o JavaScript para usar o CaisMed.</p></noscript>
+  <script type="module" src="js/pages/auth.js"></script>
+</body>
+</html>

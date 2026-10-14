@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CaisMed | Disponibilidade</title>
+  <meta name="description" content="CaisMed: agende consultas, faça a triagem e acompanhe seu plano de saúde." />
+  <meta name="theme-color" content="#132C77" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="CaisMed" />
+  <script>(function(){try{var t=localStorage.getItem("tema"),f=localStorage.getItem("fonte");document.documentElement.setAttribute("data-tema",t==="escuro"||t==="preto"?"escuro":"claro");document.documentElement.setAttribute("data-fonte",f==="grande"?"grande":"normal")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})()</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-perfil="profissional,administrador" data-layout="app">
+  <div class="app" id="app">
+    <main class="app-body" id="main" tabindex="-1">
+      <h1 class="intro-text left">Dias e Horários Disponíveis</h1>
+      <div class="field" id="campo-prof" hidden><label for="prof-sel">Profissional</label><select id="prof-sel"></select></div>
+      <p class="subtitulo" id="sub-prof"></p>
+      <form id="disp-form" class="passo">
+        <h2 style="font-size:1rem;margin-bottom:.6rem">Adicionar Horário de Atendimento</h2>
+        <div class="form-grid">
+          <div class="field"><label for="d-clinica">Clínica</label><select id="d-clinica" required></select></div>
+          <div class="field"><label for="d-dia">Dia da Semana</label><select id="d-dia" required></select></div>
+          <div class="field"><label for="d-inicio">Início</label><input type="time" id="d-inicio" value="08:00" required /></div>
+          <div class="field"><label for="d-fim">Fim</label><input type="time" id="d-fim" value="12:00" required /></div>
+          <div class="field"><label for="d-duracao">Duração de Cada Consulta</label>
+            <select id="d-duracao"><option value="20">20 minutos</option><option value="30" selected>30 minutos</option><option value="45">45 minutos</option><option value="60">1 hora</option></select></div>
+        </div>
+        <p class="erro-form" id="erro" role="alert" hidden></p>
+        <button type="submit" class="btn">Adicionar Horário</button>
+      </form>
+      <h2 class="sec-title">Horários Cadastrados</h2>
+      <div id="lista-disp" aria-live="polite"></div>
+    </main>
+  </div>
+  <noscript><p style="padding:1rem;text-align:center">Ative o JavaScript para usar o CaisMed.</p></noscript>
+  <script type="module" src="js/pages/disponibilidade.js"></script>
+</body>
+</html>

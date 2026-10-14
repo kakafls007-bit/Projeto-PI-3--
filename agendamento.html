@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>CaisMed | Marcar Consulta</title>
+  <meta name="description" content="CaisMed: agende consultas, faça a triagem e acompanhe seu plano de saúde." />
+  <meta name="theme-color" content="#132C77" />
+  <link rel="manifest" href="manifest.webmanifest" />
+  <link rel="icon" type="image/png" sizes="48x48" href="icons/favicon-48.png" />
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-title" content="CaisMed" />
+  <script>(function(){try{var t=localStorage.getItem("tema"),f=localStorage.getItem("fonte");document.documentElement.setAttribute("data-tema",t==="escuro"||t==="preto"?"escuro":"claro");document.documentElement.setAttribute("data-fonte",f==="grande"?"grande":"normal")}catch(e){document.documentElement.setAttribute("data-tema","claro")}})()</script>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body data-perfil="paciente" data-layout="app" data-voltar="home.html">
+  <div class="app" id="app">
+    <main class="app-body" id="main" tabindex="-1">
+      <h1 class="intro-text left">Marque Sua Consulta</h1>
+      <form id="agendamento-form">
+        <div class="passos">
+          <section class="passo" id="passo-clinica" aria-labelledby="h-clinica">
+            <h2 id="h-clinica">Clínica</h2>
+            <div class="field"><label for="clinica">Escolha a Clínica</label><select id="clinica" required><option value="" disabled selected>Carregando...</option></select></div>
+            <p class="consulta-linha" id="info-clinica"></p>
+          </section>
+          <section class="passo bloqueado" id="passo-esp" aria-labelledby="h-esp">
+            <h2 id="h-esp">Especialidade</h2>
+            <div class="field"><label for="especialidade">Escolha a Especialidade</label><select id="especialidade" required disabled><option value="" disabled selected>Escolha a clínica primeiro</option></select></div>
+          </section>
+          <section class="passo bloqueado" id="passo-prof" aria-labelledby="h-prof">
+            <h2 id="h-prof">Profissional</h2>
+            <div class="field"><label for="profissional">Escolha o Profissional</label><select id="profissional" required disabled><option value="" disabled selected>Escolha a especialidade primeiro</option></select></div>
+          </section>
+          <section class="passo bloqueado largo" id="passo-data" aria-labelledby="h-data">
+            <h2 id="h-data">Data e Horário</h2>
+            <div class="field"><label for="data">Data da Consulta</label><input type="date" id="data" required disabled /></div>
+            <div id="datas-sugeridas" class="datas-sugeridas" aria-label="Próximas datas com horário livre"></div>
+            <div class="field" style="margin-top:.75rem"><span class="label" id="lbl-horario">Horário</span>
+              <div class="slots" id="slots" role="radiogroup" aria-labelledby="lbl-horario"><p class="empty-state" style="grid-column:1/-1">Escolha a data para ver os horários.</p></div>
+            </div>
+          </section>
+        </div>
+        <div class="resumo-agend" id="resumo" hidden></div>
+        <p class="erro-form" id="erro" role="alert" hidden></p>
+        <div class="bottom-area"><button type="submit" class="btn" id="btn-confirmar" disabled>Confirmar Agendamento</button></div>
+      </form>
+    </main>
+  </div>
+  <noscript><p style="padding:1rem;text-align:center">Ative o JavaScript para usar o CaisMed.</p></noscript>
+  <script type="module" src="js/pages/agendamento.js"></script>
+</body>
+</html>
